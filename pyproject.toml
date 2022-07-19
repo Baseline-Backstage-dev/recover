@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "recover"
+version = "0.1.0"
+description = ""
+authors = ["Marcel Martinelli <marcel.martinelli@slimmer.ai>", "Steven Bosch <steven.bosch@slimmer.ai>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "^1.9.1"
+openapi-schema-pydantic = "^1.2.4"
+
+[tool.poetry.dev-dependencies]
+# Deployment
+pulumi = "^3.34.1,<4.0.0"
+pulumi-aws = "^5.0.0,<6.0.0"
+pulumi-random = "^4.2.0,<5.0.0"
+pulumi_tls = "^4.4.0,<5.0.0"
+pulumi-aws-apigateway = "^0.0.7,<1.0.0"
+
+# Domain code
+boto3 = "^1.24.22"  # Is already present on AWS, so no need for it in the lambda layer
+
+# Development
+black = "^22.3.0"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+mypy = "^0.961"
+pre-commit = "^2.19.0"
+localstack = "^0.14.3"
+pulumi-local = "^0.3"
+pytest = "^7.1.2"
+moto = "^3.1.16"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+exclude = ["venv", "lambda_layer"]
+
+[settings]
+known_third_party = ["boto3", "moto", "openapi_schema_pydantic", "pulumi", "pulumi_aws", "pulumi_aws_apigateway", "pydantic", "pytest"]

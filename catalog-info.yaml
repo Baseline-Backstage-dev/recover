@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "Recover"
+  description: "Document processing"
+  annotations:
+    github.com/project-slug: Baseline-Backstage-dev/recover
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "Steven"

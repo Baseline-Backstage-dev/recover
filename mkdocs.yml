@@ -1,0 +1,8 @@
+site_name: "Recover"
+site_description: "Document processing"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
